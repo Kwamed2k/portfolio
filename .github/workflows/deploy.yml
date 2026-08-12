@@ -27,19 +27,19 @@ jobs:
           role-to-assume: arn:aws:iam::867321192876:role/GitHubPortfolioDeployRole
           aws-region: us-east-1
 
-      # Step 3: Deploy website to S3
-      - name: Deploy website to S3
-        run: |
-          aws s3 sync . s3://danielkusi.com \
-            --delete \
-            --exclude ".git/*" \
-            --exclude ".github/*" \
-            --exclude "README.md"
+        # Step 3: Deploy website to S3
+  - name: Deploy website to S3
+    run: |
+      aws s3 sync . s3://danielkusi.com \
+        --delete \
+        --exclude ".git/*" \
+        --exclude ".github/*" \
+        --exclude "README.md"
 
-       # Step 4: Purge Cloudflare cache
-	- name: Purge Cloudflare Cache
-	  run: |
-	    curl -X POST "https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_ZONE_ID }}/purge_cache" \
-		-H "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}" \
-		-H "Content-Type: application/json" \
-		--data '{"purge_everything":true}'	
+  # Step 4: Purge Cloudflare cache
+  - name: Purge Cloudflare Cache
+    run: |
+      curl -X POST "https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_ZONE_ID }}/purge_cache" \
+        -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}" \
+        -H "Content-Type: application/json" \
+        --data '{"purge_everything":true}'
