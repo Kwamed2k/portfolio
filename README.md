@@ -25,3 +25,64 @@ Rather than relying solely on traditional web hosting, the website is deployed u
     • Source code managed with Git and GitHub
     • Automated deployment from GitHub to Amazon S3 using GitHub Actions
     • Continuous deployment workflow for publishing website updates
+
+
+
+# 🏗️ Architecture
+The portfolio website uses a cloud-based static hosting architecture with Amazon S3 serving as the origin and Cloudflare providing DNS, HTTPS, CDN, caching, and additional security capabilities.
+Website visitors access the portfolio through the custom domain, while deployment is automated through GitHub Actions.
+
+# 🌐 Website Request Flow
+Visitor
+   │
+   │ HTTPS
+   ▼
+Cloudflare
+(DNS + CDN + SSL/TLS)
+   │
+   ▼
+Amazon S3
+(Static Website Hosting)
+When a visitor accesses the portfolio, the request is handled through Cloudflare. Cloudflare provides DNS resolution, HTTPS, CDN functionality, and caching before requests are served from the Amazon S3-hosted website.
+
+# 🚀 Deployment Flow
+Developer
+   │
+   │ git push
+   ▼
+GitHub Repository
+   │
+   │ GitHub Actions
+   ▼
+AWS IAM Role
+(OIDC Federation)
+   │
+   │ Temporary credentials
+   ▼
+Amazon S3
+   │
+   │ Cache purge
+   ▼
+Cloudflare
+Website changes are automatically deployed through a GitHub Actions workflow.
+The workflow:
+    1. Checks out the repository.
+    2. Configures the required AWS credentials.
+    3. Authenticates to AWS using an IAM role through GitHub's OIDC federation.
+    4. Synchronizes the website files to the Amazon S3 bucket.
+    5. Purges the Cloudflare cache so that updated content can be delivered to visitors.
+
+# ☁️ Architecture Components
+        Component                           Purpose
+Git                         Version control and change tracking; changes are pushed to the remote GitHub repository
+GitHub                      Remote repository hosting and collaboration platform
+GitHub Actions              CI/CD automation
+AWS IAM                     Secure access control for deployment
+GitHub OIDC                 Keyless authentication between GitHub Actions and AWS
+Amazon S3                   Static website hosting and file storage
+Cloudflare DNS              Domain and DNS management
+Cloudflare CDN              Content delivery and caching
+Cloudflare SSL/TLS          HTTPS protection
+Cloudflare Cache Purge      Ensures updated website content is delivered after deployment
+Namecheap                   Domain registration
+
