@@ -121,3 +121,61 @@ portfolio/
 ├── index.html           # Main portfolio homepage
 └── README.md            # Project documentation
 The project follows a simple separation of concerns by keeping the HTML, CSS, JavaScript, images, and supporting assets organized in dedicated directories.
+
+# 🚀 Deployment Process
+
+Website deployments are automated using GitHub Actions.
+
+When changes are committed and pushed to the main branch, the deployment workflow:
+
+Checks out the latest source code from GitHub.
+Configures the AWS deployment environment.
+Uses GitHub OIDC to authenticate securely with AWS.
+Assumes the configured AWS IAM deployment role using temporary credentials.
+Synchronizes the website files to the Amazon S3 bucket.
+Purges the Cloudflare cache so visitors receive the latest version of the website.
+Deployment Flow
+Developer
+   │
+   │ git push origin main
+   ▼
+GitHub Repository
+   │
+   │ GitHub Actions
+   ▼
+GitHub OIDC
+   │
+   ▼
+AWS IAM Role
+   │
+   │ Temporary credentials
+   ▼
+Amazon S3
+   │
+   │ Cache purge
+   ▼
+Cloudflare
+   │
+   ▼
+Updated Website
+
+This approach eliminates the need for manual website uploads after changes are committed to the repository.
+
+# 🌐 Domain, DNS & HTTPS
+
+The portfolio is accessible through the custom domain:
+
+**[danielkusi.com](https://danielkusi.com)**
+
+The domain was registered through **Namecheap**, while DNS management is handled by **Cloudflare**.
+
+Cloudflare sits in front of the Amazon S3 website and provides:
+
+* DNS resolution for the custom domain
+* HTTPS through SSL/TLS
+* CDN and caching
+* Additional security controls
+* Cache invalidation after deployments
+
+This configuration allows the website to use a professional custom domain while benefiting from Cloudflare's edge network and security features.
+
