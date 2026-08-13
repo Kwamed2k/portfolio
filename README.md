@@ -86,3 +86,38 @@ Cloudflare SSL/TLS          HTTPS protection
 Cloudflare Cache Purge      Ensures updated website content is delivered after deployment
 Namecheap                   Domain registration
 
+
+
+# 🛠️ Technologies & Services
+Frontend
+    • HTML5 — Website structure and content
+    • CSS3 — Styling, layout and responsive design
+    • JavaScript — Client-side functionality and interactions
+Version Control & CI/CD
+    • Git — Version control and change tracking
+    • GitHub — Remote repository hosting
+    • GitHub Actions — Automated deployment workflow
+Cloud & Infrastructure
+    • Amazon S3 — Static website hosting and file storage
+    • AWS IAM — Deployment permissions and access control
+    • GitHub OIDC — Keyless authentication between GitHub Actions and AWS
+Edge, DNS & Security
+    • Cloudflare DNS — DNS management for the custom domain
+    • Cloudflare CDN — Content delivery and caching
+    • Cloudflare SSL/TLS — HTTPS
+    • Cloudflare Cache Purge — Cache invalidation after deployment
+Domain
+    • Namecheap — Domain registration
+
+# 📁 Project Structure
+portfolio/
+├── assets/              # Supporting project assets
+├── css/                 # Stylesheets
+├── images/              # Website images and visual assets
+├── js/                  # JavaScript files
+├── construction.html    # Page displayed for projects still under development
+├── error404.html        # Custom 404 error page
+├── favicon.ico          # Website favicon
+├── index.html           # Main portfolio homepage
+└── README.md            # Project documentation
+The project follows a simple separation of concerns by keeping the HTML, CSS, JavaScript, images, and supporting assets organized in dedicated directories.
