@@ -318,6 +318,21 @@ The project will continue to evolve as new portfolio projects and additional clo
 
 
 
+## Acknowledgements
+* **AmaliTech Ghana & Amazon Web Services (AWS)** - or providing access to the AmaliTech AWS re/Start Program and AWS cloud infrastructure.
+* **The Odin Project** - for its structured, project-based web development curriculum.
+* **MDN Web Docs** - for JavaScript reference and documentation.
+* **JAVASCRIPT.INFO** - for modern JavaScript tutorials and learning resources.
+* **Cloudflare** - for DNS, CDN, SSL/TLS, caching, and security.
+* **GitHub** - for source control and CI/CD.
+* **Namecheap** - for domain registration.
+
+
+
+## License
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+
 
 
 
