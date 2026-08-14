@@ -263,5 +263,59 @@ The deployment workflow includes a Cloudflare cache purge step so that newly dep
 
 
 
+# 🚀 Future Improvements
+Project 0 will continue to evolve as I expand my cloud engineering skills.
+
+Planned improvements include:
+* Adding additional portfolio projects demonstrating AWS architecture and cloud engineering practices
+* Expanding CI/CD automation as the portfolio evolves
+* Further improving website accessibility, performance, and observability
+* Introducing additional infrastructure-as-code practices where appropriate
+* Continuing to strengthen security and operational best practices
+
+The portfolio is intentionally designed to grow alongside my cloud engineering journey.
+
+# 📚 Lessons Learned
+This project provided practical experience that went beyond building a static website.
+
+Key lessons include:
+* Understanding how a static website can be hosted using Amazon S3
+* Understanding the relationship between a domain registrar, DNS provider, CDN, and cloud hosting platform
+* Configuring HTTPS and DNS for a custom domain
+* Using Git and GitHub for version control and collaboration
+* Building an automated deployment workflow with GitHub Actions
+* Using GitHub OIDC and AWS IAM for secure, temporary authentication
+* Troubleshooting real deployment and configuration issues
+* Understanding how caching can affect the delivery of updated website content
+* Applying cloud engineering principles to a small, real-world project
+
+Most importantly, the project reinforced the value of troubleshooting problems systematically rather than simply following a predefined deployment path.
+
+# 👨‍💻 About the Author
+**Daniel Junior Kusi**
+
+Cloud Engineering enthusiast focused on building practical experience with **AWS, Linux, networking, infrastructure, automation, and DevOps technologies**.
+
+This portfolio is both a professional showcase and a practical learning environment where I document and demonstrate my progression into cloud engineering.
+
+**Portfolio:** [danielkusi.com](https://danielkusi.com)
+
+**GitHub:** [github.com/Kwamed2k/portfolio](https://github.com/Kwamed2k/portfolio)
+
+## ✅ Project Status
+**Status: Active**
+
+Project 0 is currently deployed and operational at **danielkusi.com**.
+
+The core portfolio website, cloud hosting architecture, Cloudflare configuration, security configuration, performance improvements, and automated GitHub-to-S3 deployment pipeline have been implemented successfully.
+
+The project will continue to evolve as new portfolio projects and additional cloud engineering capabilities are developed.
+
+
+
+
+
+
+
 
 
