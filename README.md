@@ -1,38 +1,38 @@
 # Project 0 -  Cloud-Hosted Portfolio Website
-Portfolio Page
 
 A responsive personal portfolio website designed, built, and deployed as a cloud-hosted static website using HTML, CSS, JavaScript, Amazon S3, Cloudflare, GitHub, and GitHub Actions.
 The project demonstrates the practical application of web development fundamentals together with AWS cloud hosting, DNS, HTTPS, CDN, security configuration, performance optimization, and CI/CD automation.
 
-# 🌐 Live Website
-danielkusi.com
+## 🌐 Live Website
+[**danielkusi.com**](https://danielkusi.com)
 
-# 🎯 Project Objective
+## 🎯 Project Objective
 The objective of this project is to build and deploy a professional personal portfolio website while gaining practical, hands-on experience with AWS cloud infrastructure, web hosting, DNS, HTTPS, CDN, security, performance optimization, version control, and automated deployment.
 Rather than relying solely on traditional web hosting, the website is deployed using cloud services and an automated deployment workflow to simulate a practical cloud engineering environment.
 
-# ✨ Key Features
-    • Responsive portfolio website built with HTML, CSS, and JavaScript
-    • Static website hosting using Amazon S3
-    • Custom domain configuration
-    • DNS management through Cloudflare
-    • HTTPS enabled through Cloudflare
-    • Cloudflare CDN and caching
-    • Cloudflare security headers and additional security configuration
-    • Performance optimization and caching configuration
-    • Custom error handling
-    • Dedicated project-under-construction page for incomplete projects
-    • Source code managed with Git and GitHub
-    • Automated deployment from GitHub to Amazon S3 using GitHub Actions
-    • Continuous deployment workflow for publishing website updates
+## ✨ Key Features
+    - Responsive portfolio website built with HTML, CSS, and JavaScript
+    - Static website hosting using Amazon S3
+    - Custom domain configuration
+    - DNS management through Cloudflare
+    - HTTPS enabled through Cloudflare
+    - Cloudflare CDN and caching
+    - Cloudflare security headers and additional security configuration
+    - Performance optimization and caching configuration
+    - Custom error handling
+    - Dedicated project-under-construction page for incomplete projects
+    - Source code managed with Git and GitHub
+    - Automated deployment from GitHub to Amazon S3 using GitHub Actions
+    - Continuous deployment workflow for publishing website updates
 
 
 
-# 🏗️ Architecture
+## 🏗️ Architecture
 The portfolio website uses a cloud-based static hosting architecture with Amazon S3 serving as the origin and Cloudflare providing DNS, HTTPS, CDN, caching, and additional security capabilities.
 Website visitors access the portfolio through the custom domain, while deployment is automated through GitHub Actions.
 
-# 🌐 Website Request Flow
+## 🌐 Website Request Flow
+```text
 Visitor
    │
    │ HTTPS
@@ -43,9 +43,11 @@ Cloudflare
    ▼
 Amazon S3
 (Static Website Hosting)
+```
 When a visitor accesses the portfolio, the request is handled through Cloudflare. Cloudflare provides DNS resolution, HTTPS, CDN functionality, and caching before requests are served from the Amazon S3-hosted website.
 
-# 🚀 Deployment Flow
+## 🚀 Deployment Flow
+```text
 Developer
    │
    │ git push
@@ -64,6 +66,7 @@ Amazon S3
    │ Cache purge
    ▼
 Cloudflare
+```
 Website changes are automatically deployed through a GitHub Actions workflow.
 The workflow:
     1. Checks out the repository.
@@ -72,7 +75,7 @@ The workflow:
     4. Synchronizes the website files to the Amazon S3 bucket.
     5. Purges the Cloudflare cache so that updated content can be delivered to visitors.
 
-# ☁️ Architecture Components
+## ☁️ Architecture Components
 | Component | Purpose |
 |---|---|
 | **Git** | Version control and change tracking; changes are pushed to the remote GitHub repository |
@@ -89,7 +92,7 @@ The workflow:
 
 
 
-# 🛠️ Technologies & Services
+## 🛠️ Technologies & Services
 Frontend
     • HTML5 — Website structure and content
     • CSS3 — Styling, layout and responsive design
@@ -110,7 +113,7 @@ Edge, DNS & Security
 Domain
     • Namecheap — Domain registration
 
-# 📁 Project Structure
+### 📁 Project Structure
 portfolio/
 ├── assets/              # Supporting project assets
 ├── css/                 # Stylesheets
@@ -123,7 +126,7 @@ portfolio/
 └── README.md            # Project documentation
 The project follows a simple separation of concerns by keeping the HTML, CSS, JavaScript, images, and supporting assets organized in dedicated directories.
 
-# 🚀 Deployment Process
+### 🚀 Deployment Process
 
 Website deployments are automated using GitHub Actions.
 
@@ -136,6 +139,7 @@ Assumes the configured AWS IAM deployment role using temporary credentials.
 Synchronizes the website files to the Amazon S3 bucket.
 Purges the Cloudflare cache so visitors receive the latest version of the website.
 Deployment Flow
+```text
 Developer
    │
    │ git push origin main
@@ -159,10 +163,11 @@ Cloudflare
    │
    ▼
 Updated Website
+```
 
 This approach eliminates the need for manual website uploads after changes are committed to the repository.
 
-# 🌐 Domain, DNS & HTTPS
+### 🌐 Domain, DNS & HTTPS
 
 The portfolio is accessible through the custom domain:
 
@@ -182,27 +187,27 @@ This configuration allows the website to use a professional custom domain while 
 
 
 
-# 🔐 Security Considerations
+## 🔐 Security Considerations
 Security was considered throughout the design and deployment of the portfolio.
 
-# AWS Access Control
+## AWS Access Control
 The GitHub Actions deployment workflow does not rely on long-lived AWS access keys stored as GitHub secrets. Instead, **GitHub OIDC** is used to establish a trusted identity relationship with AWS, allowing the workflow to assume a dedicated **IAM deployment role** and obtain temporary credentials.
 
 This reduces the risk associated with storing permanent AWS credentials in the repository or CI/CD environment.
 
-# HTTPS
+### HTTPS
 The portfolio is served through **HTTPS using Cloudflare SSL/TLS**, helping protect data exchanged between visitors and the website.
 
-# Security Headers
+### Security Headers
 Cloudflare security headers are configured to provide additional browser-side protections for the website.
 
-# Repository & Credential Security
+### Repository & Credential Security
 Sensitive credentials and configuration values are kept outside the source code and are not committed to the GitHub repository.
 
 The deployment process uses controlled IAM permissions rather than broad AWS account access.
 
 
-# Challenges & Solutions
+## Challenges & Solutions
 Building and deploying the portfolio involved several practical issues that required troubleshooting and configuration changes.
 1. Amazon S3 NoSuchKey Error
 Challenge:
@@ -230,40 +235,40 @@ The completed workflow now provides automated deployment from the GitHub reposit
 
 
 
-# 🧠 Engineering Decisions
+## 🧠 Engineering Decisions
 Several design decisions were made to keep the portfolio simple, cost-conscious, secure, and suitable as a practical cloud engineering project.
 
-# Amazon S3 for Static Hosting
+### Amazon S3 for Static Hosting
 Amazon S3 was selected because the portfolio is a static website and does not require a continuously running application server or database.
 
 This provides a simple and cost-conscious hosting architecture while giving practical experience with AWS storage and static website hosting.
 
-# Cloudflare in Front of S3
+### Cloudflare in Front of S3
 Cloudflare was used for DNS, HTTPS, CDN, caching, and additional security capabilities.
 
 Using Cloudflare in front of the S3 origin provides edge delivery and reduces the need to use additional AWS services for functions already available through the Cloudflare free tier.
 
-# GitHub Actions for CI/CD
+### GitHub Actions for CI/CD
 GitHub Actions was selected to automate deployment and eliminate the need to manually upload website files after each change.
 
 This also provides practical experience with CI/CD concepts and infrastructure automation.
 
-# GitHub OIDC and IAM Role-Based Access
+### GitHub OIDC and IAM Role-Based Access
 GitHub OIDC was chosen instead of storing long-lived AWS access keys in the repository or CI/CD environment.
 
 The workflow assumes a dedicated IAM role and uses temporary credentials for deployment, providing a more secure authentication model.
 
-# Custom Error and Construction Pages
+### Custom Error and Construction Pages
 Custom `error404.html` and `construction.html` pages were implemented to provide a better visitor experience when a requested page does not exist or a portfolio project is still under development.
 
 Rather than exposing a generic error or broken link, the website provides a controlled and informative response.
 
-# Cloudflare Cache Purging After Deployment
+### Cloudflare Cache Purging After Deployment
 The deployment workflow includes a Cloudflare cache purge step so that newly deployed website content becomes available to visitors without requiring them to wait for cached content to expire.
 
 
 
-# 🚀 Future Improvements
+## 🚀 Future Improvements
 Project 0 will continue to evolve as I expand my cloud engineering skills.
 
 Planned improvements include:
@@ -275,7 +280,7 @@ Planned improvements include:
 
 The portfolio is intentionally designed to grow alongside my cloud engineering journey.
 
-# 📚 Lessons Learned
+## 📚 Lessons Learned
 This project provided practical experience that went beyond building a static website.
 
 Key lessons include:
@@ -291,7 +296,7 @@ Key lessons include:
 
 Most importantly, the project reinforced the value of troubleshooting problems systematically rather than simply following a predefined deployment path.
 
-# 👨‍💻 About the Author
+## 👨‍💻 About the Author
 **Daniel Junior Kusi**
 
 Cloud Engineering enthusiast focused on building practical experience with **AWS, Linux, networking, infrastructure, automation, and DevOps technologies**.
