@@ -93,6 +93,7 @@ The workflow:
 
 
 ## 🛠️ Technologies & Services
+```text
 Frontend
     • HTML5 — Website structure and content
     • CSS3 — Styling, layout and responsive design
@@ -112,8 +113,10 @@ Edge, DNS & Security
     • Cloudflare Cache Purge — Cache invalidation after deployment
 Domain
     • Namecheap — Domain registration
+```    
 
 ### 📁 Project Structure
+```text
 portfolio/
 ├── assets/              # Supporting project assets
 ├── css/                 # Stylesheets
@@ -125,6 +128,7 @@ portfolio/
 ├── index.html           # Main portfolio homepage
 └── README.md            # Project documentation
 The project follows a simple separation of concerns by keeping the HTML, CSS, JavaScript, images, and supporting assets organized in dedicated directories.
+```
 
 ### 🚀 Deployment Process
 
